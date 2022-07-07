@@ -31,13 +31,13 @@ export default function Header(props) {
                 </Button>
               </li>
               
-              <li className={`nav-item ${getNavLinkClass('/stories')}`}>
+              <li className={`nav-item ${getNavLinkClass('/stories')} position-relative top-0 left-0 z-3`}>
                 <Button className='nav-link' type='link' href='/stories'>
                   Stories
                 </Button>
               </li>
 
-              <li className={`nav-item ${getNavLinkClass('/agents')}`}>
+              <li className={`nav-item ${getNavLinkClass('/agents')} position-relative top-0 left-0 z-3`}>
                 <Button className='nav-link' type='link' href='/agents'>
                   Agents
                 </Button>
