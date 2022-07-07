@@ -2,13 +2,14 @@ import React from 'react'
 import Button from 'components/atom/Button'
 import BrandIcon from 'components/atom/BrandIcon'
 
+
 export default function Header(props) {
   const getNavLinkClass = (path) => {
     return props.location.pathname === path ? 'active' : ''
   }
 
   return (
-    <header className='spacing-sm'>
+    <header className='spacing-sm' data-aos="fade-up" data-aos-duration="1000">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
           <a className="navbar-brand" href="#">

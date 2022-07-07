@@ -6,6 +6,8 @@ import landingPage from 'json/landingPage.json'
 import Rooms from 'components/molecules/Rooms'
 import MostPicked from 'components/molecules/MostPicked'
 import Categories from 'components/molecules/Categories'
+import Testimonials from 'components/organisms/Testimonials';
+import Footer from 'components/organisms/Footer'
 
 export default class Home extends Component{
   constructor(props) {
@@ -15,7 +17,6 @@ export default class Home extends Component{
 
 
   render() {
-    console.log()
     return (
       <>
         <Header {...this.props}/>
@@ -23,6 +24,8 @@ export default class Home extends Component{
         <Rooms />
         <MostPicked refMostPicked={this.refMostPicked} data={landingPage.mostPicked} />
         <Categories data={landingPage.categories}/>
+        <Testimonials data={landingPage.testimonial}/>
+        <Footer />
       </>
     )
   }
