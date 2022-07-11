@@ -1,0 +1,62 @@
+@import '../../../../assets/scss/color-variables';
+
+$stepperMainColor: $gray-200;
+$size: 50px;
+
+ol.stepper {
+  li {
+    list-style: none;
+    width: $size;
+    height: $size;
+    border-radius: $size;
+
+    &:after {
+      position: absolute;
+      content: '';
+      z-index: 2;
+      width: $size;
+      height: $size;
+      border-radius: $size;
+      background: $teal url('data:image/svg+xml;utf8,<svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.62961 7.52668L7.82252 16.2306C8.46805 17.3126 9.94113 17.5354 10.8778 16.6927L27.1842 2.02177" stroke="white" stroke-width="4" stroke-linecap="round"/> </svg>') center no-repeat;
+      transform: scale(1);
+      transition: 0.35s transform ease-in-out ;
+    }
+
+    &:not(:last-child) {
+      margin-right: 60px;
+
+      &:before {
+        content: '';
+        z-index: -2;
+        top: 50%;
+        left: 100%;
+        position: absolute;
+        width: $size + 10px;
+        height: 1px;
+        background-color: $stepperMainColor;
+      }
+    }
+
+    &.active {
+      &:after {
+        z-index: -1;
+        background: $white;
+        border: 1px solid $stepperMainColor;
+        transform: scale(1.2);
+      }
+
+      background-color: $stepperMainColor;
+      color: $gray-500;
+      
+      & ~ li {
+        color: $gray-500;
+        background: $stepperMainColor;
+  
+        &:after {
+          content: none;
+        }
+      }
+    }
+
+  }
+}

@@ -1,12 +1,28 @@
 import React from 'react'
 import Button from 'components/atom/Button'
 import BrandIcon from 'components/atom/BrandIcon'
+import { Fade } from 'react-reveal'
 
 
 export default function Header(props) {
   const getNavLinkClass = (path) => {
     return props.location.pathname === path ? 'active' : ''
   }
+
+  if(props.isCentered)
+    return (
+      <Fade>
+        <header className="spacing-sm">
+          <div className="container">
+            <nav className="navbar navbar-expand-lg navbar-light">
+              <Button className="brand-text-icon mx-auto border-0 bg-white" link href=''>
+                Stay<span className="text-secondPrimary">cation.</span>
+              </Button>
+            </nav>
+          </div>
+        </header>
+      </Fade>
+    )
 
   return (
     <header className='spacing-sm' data-aos="fade-up" data-aos-duration="1000">
