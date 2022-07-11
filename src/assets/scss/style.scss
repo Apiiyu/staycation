@@ -186,9 +186,10 @@ section {
 }
 
 .card {
-  height: 100%;
+  &.bordered {
+    border: 1px solid $gray-300;
+  }
   border-radius: 15px;
-  border: none;
 
   .tag {
     z-index: 3;
@@ -314,5 +315,11 @@ footer {
 
   .copyright {
     margin: 50px 0;
+  }
+}
+
+main { 
+  p {
+    color: $gray-500;
   }
 }

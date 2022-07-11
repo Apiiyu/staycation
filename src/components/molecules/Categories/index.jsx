@@ -27,7 +27,7 @@ export default function Categories(props) {
                   return (
                     <div className="item column-3 row-1" key={secondIndex}>
                       <Fade bottom delay={300 * secondIndex}>
-                        <div className="card" >
+                        <div className="card border-0" >
                           {
                             item.isPopular ? 
                               <div className="tag position-absolute top-0 end-0 text-white">
@@ -41,7 +41,7 @@ export default function Categories(props) {
                           </figure>
 
                           <div className="meta-wrapper">
-                            <Button type='link' href={`/properties/${item._id}`} className="stretched-link d-block text-gray-900">
+                            <Button type='link' href={`/details/${item._id}`} className="stretched-link d-block text-gray-900">
                               <h5 className="h4 text-gray-900">{item.name}</h5>
                             </Button>
 

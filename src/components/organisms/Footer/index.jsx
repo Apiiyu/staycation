@@ -22,7 +22,7 @@ export default function Footer() {
               </li>
 
               <li className="list-group-item">
-                <Button type='link' href='/properties' className='text-muted'>Start Booking a Room</Button>
+                <Button type='link' href='/details' className='text-muted'>Start Booking a Room</Button>
               </li>
 
               <li className="list-group-item">
@@ -39,7 +39,7 @@ export default function Footer() {
               </li>
 
               <li className="list-group-item">
-                <Button type='link' href='/properties' className='text-muted'>Privacy</Button>
+                <Button type='link' href='/details' className='text-muted'>Privacy</Button>
               </li>
 
               <li className="list-group-item">

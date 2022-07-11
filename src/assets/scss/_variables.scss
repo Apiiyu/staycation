@@ -59,6 +59,7 @@ $dark:          $gray-900 !default;
 $theme-colors: (
   "primary":    $primary,
   "secondPrimary": $secondPrimary,
+  "teal": $teal,
   "secondary":  $secondary,
   "success":    $success,
   "info":       $info,
@@ -1337,12 +1338,12 @@ $figure-caption-color:              $gray-600 !default;
 $breadcrumb-font-size:              null !default;
 $breadcrumb-padding-y:              0 !default;
 $breadcrumb-padding-x:              0 !default;
-$breadcrumb-item-padding-x:         .5rem !default;
+$breadcrumb-item-padding-x:         1.5rem !default;
 $breadcrumb-margin-bottom:          1rem !default;
 $breadcrumb-bg:                     null !default;
 $breadcrumb-divider-color:          $gray-600 !default;
 $breadcrumb-active-color:           $gray-600 !default;
-$breadcrumb-divider:                quote("/") !default;
+$breadcrumb-divider:                quote(">") !default;
 $breadcrumb-divider-flipped:        $breadcrumb-divider !default;
 $breadcrumb-border-radius:          null !default;
 // scss-docs-end breadcrumb-variables

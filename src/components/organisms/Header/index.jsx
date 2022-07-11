@@ -12,9 +12,7 @@ export default function Header(props) {
     <header className='spacing-sm' data-aos="fade-up" data-aos-duration="1000">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
-          <a className="navbar-brand" href="#">
-            <BrandIcon />
-          </a>
+          <BrandIcon />
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>

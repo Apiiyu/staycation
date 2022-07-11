@@ -8,8 +8,11 @@ import MostPicked from 'components/molecules/MostPicked'
 import Categories from 'components/molecules/Categories'
 import Testimonials from 'components/organisms/Testimonials';
 import Footer from 'components/organisms/Footer'
-import Example from 'components/molecules/example'
 export default class Home extends Component{
+  componentDidMount() {
+    window.title = 'Staycation | Home'
+    window.scrollTo(0, 0)
+  }
   constructor(props) {
     super(props)
     this.refMostPicked = React.createRef()
@@ -21,7 +24,6 @@ export default class Home extends Component{
       <>
         <Header {...this.props}/>
         <Hero refMostPicked={this.refMostPicked} data={landingPage} />
-        <Example />
         <Rooms />
         <MostPicked refMostPicked={this.refMostPicked} data={landingPage.mostPicked} />
         <Categories data={landingPage.categories}/>
