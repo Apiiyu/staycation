@@ -4,36 +4,37 @@ import { InputText } from 'components/atom/Form'
 
 export default function BookingInformation(props) {
   const { data, ItemDetails, checkout} = props
+  console.log('checkout', checkout)
 
   return (
     <Fade>
       <div className="container mb-5">
         <div className="row justify-content-center align-items-center">
-          <div className="col-5 border-right py-5" style={{ paddingRight: 80 }}>
+          <div className="col-5 border-2 border-end border-light py-5" style={{ paddingRight: 80 }}>
             <Fade delay={300}>
               <div className="card border-0">
                 <figure className="img-wrapper" style={{ height: 270 }}>
-                  <img src={ItemDetails.imageUrls[0].url} alt={ItemDetails.name} className="img-cover" />
+                  <img src={ItemDetails.imageUrl} alt={ItemDetails.name} className="img-cover" />
                 </figure>
 
                 <div className="row align-items-center">
                   <div className="col">
                     <div className="meta-wrapper">
-                      <h5>{ItemDetails.name}</h5>
+                      <h5>{ItemDetails.title}</h5>
                       <span className="text-muted">
                         {ItemDetails.city}, {ItemDetails.country}
                       </span>
                     </div>
                   </div>
 
-                  <div className="col-auto">
+                  {/* <div className="col-auto">
                     <span className='text-primary'>
                       ${checkout.duration + ItemDetails.price} USD
                       <span className="text-muted"> per </span>
                       ${checkout.duration} {ItemDetails.unit}
                       {+checkout.duration > 1 ? 's' : ''}
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </Fade>

@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import propTypes from 'prop-types'
 import Button from 'components/atom/Button'
 import { InputNumber, InputDate } from 'components/atom/Form'
+import { withRouter } from 'react-router-dom'
 
-export default class BookingForm extends Component {
+class BookingForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -61,6 +62,28 @@ export default class BookingForm extends Component {
     }
   }
 
+  onBooking = () => {
+    const { data } = this.state
+    const payload = {
+      _id: this.props.itemDetails._id,
+      duration: data.duration,
+      date: {
+        startDate: data.date.startDate,
+        endDate: data.date.endDate
+      }
+    }
+    console.log('datas', payload)
+
+    this.props.startBooking({
+      _id: this.props.itemDetails._id,
+      duration: data.duration,
+      date: {
+        startDate: data.date.startDate,
+        endDate: data.date.endDate
+      }
+    })
+  }
+
   render() {
     const { data } = this.state
     const { itemDetails, startBooking } = this.props
@@ -96,7 +119,7 @@ export default class BookingForm extends Component {
         <h6 className="text-muted fw-light mb-5">
           You will pay {' '}
           <span className="text-primary fw-normal">
-            ${itemDetails.price + data.duration} USD
+            ${itemDetails.price * data.duration} USD
           </span>{' '}
           per{' '}
 
@@ -105,7 +128,7 @@ export default class BookingForm extends Component {
           </span>
         </h6>
 
-        <Button type='button' className='btn btn-cta justify-content-center py-3' hasShadow isPrimary isBlock onClick={startBooking}>
+        <Button type='button' className='btn btn-cta justify-content-center py-3' hasShadow isPrimary isBlock onClick={this.onBooking}>
           Continue to Book
         </Button>
       </div>
@@ -117,3 +140,5 @@ BookingForm.propTypes = {
   itemDetails: propTypes.object,
   startBooking: propTypes.func
 }
+
+export default withRouter(BookingForm)

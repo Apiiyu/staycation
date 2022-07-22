@@ -14,7 +14,6 @@ export default function Stepper(props) {
 
   const nextStep = () => {
     if(+indexStep < totalStep) setCurrentStep(stepsKeys[indexStep + 1])
-    console.log({currentStep})
   }
 
 

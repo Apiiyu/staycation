@@ -87,6 +87,10 @@ a {
   background: $gray-200;
 }
 
+.border-light {
+  border-color: $gray-200 !important;
+}
+
 header {
   border-bottom: 1px solid $gray-200;
   width: 100%;

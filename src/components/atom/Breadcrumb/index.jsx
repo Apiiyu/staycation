@@ -12,7 +12,7 @@ export default function Breadcrumb(props) {
       <ol className={classNames.join(" ")}>
         {data.map((item, index) => {
           return (
-            <li key={index} className={`breadcrumb-item ${index === data.length - 1 ? 'active' : ''}`}>
+            <li key={`item-${index}`} className={`breadcrumb-item ${index === data.length - 1 ? 'active' : ''}`}>
               { index === data.length - 1 ? (
                 item.pageTitle
               ) : (

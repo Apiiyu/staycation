@@ -4,10 +4,10 @@ import { Fade } from 'react-reveal'
 
 export default function Categories(props) {
   const { data } = props
-  
+
   return data.map((categories, firstIndex) => {
     return (
-      <section id="categories" key={firstIndex}> 
+      <section id="categories" key={`categories-${firstIndex}`}> 
         <Fade bottom delay={100 * firstIndex}>
           <div className="container">
             <h4 className="mb-3 fw-medium">
@@ -25,7 +25,7 @@ export default function Categories(props) {
                 : 
                 categories.items.map((item, secondIndex) => {
                   return (
-                    <div className="item column-3 row-1" key={secondIndex}>
+                    <div className="item column-3 row-1" key={`items-${secondIndex}`}>
                       <Fade bottom delay={300 * secondIndex}>
                         <div className="card border-0" >
                           {
@@ -37,12 +37,12 @@ export default function Categories(props) {
                           }
 
                           <figure className="img-wrapper" style={{ height: 180 }}>
-                            <img src={item.imageUrl} alt={item.name} className="img-cover" />
+                            <img src={item.images[0] ? `${process.env.REACT_APP_HOST_ASSETS}/categories/${item.images[0].imageUrl}` : ''} alt={item.name} className="img-cover" />
                           </figure>
 
                           <div className="meta-wrapper">
                             <Button type='link' href={`/details/${item._id}`} className="stretched-link d-block text-gray-900">
-                              <h5 className="h4 text-gray-900">{item.name}</h5>
+                              <h5 className="h4 text-gray-900">{item.title}</h5>
                             </Button>
 
                             <span className="text-muted fw-light">

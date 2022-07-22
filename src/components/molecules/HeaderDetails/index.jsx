@@ -14,7 +14,7 @@ export default function HeaderDetails(props) {
           </div>
 
           <div className="col-auto text-center">
-            <h1 className="h2">{data.name}</h1>
+            <h1 className="h2">{data.title}</h1>
             <span className="text-muted">
               {data.city}, {data.country}
             </span>

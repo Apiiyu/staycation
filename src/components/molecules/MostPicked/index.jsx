@@ -14,7 +14,7 @@ export default function MostPicked(props) {
           <div className='container-grid mt-4'>
             {props.data.map( (item, index) => {
               return (
-                <div key={index} className={`item column-4 ${index === 0 ? 'row-2' : 'row-1'}`}>
+                <div key={`grid-${index}`} className={`item column-4 ${index === 0 ? 'row-2' : 'row-1'}`}>
                   <Fade bottom delay={100 * index}>
                     <div className="card card-featured">
                       <div className="tag position-absolute top-0 end-0 text-white">
@@ -23,12 +23,12 @@ export default function MostPicked(props) {
                       </div>
 
                       <figure className="img-wrapper">
-                        <img src={item.imageUrl} alt={item.name} className="img-cover" />
+                        <img src={item.images[0] ? `${process.env.REACT_APP_HOST_ASSETS}/categories/${item.images[0].imageUrl}` : ''} alt={item.title} className="img-cover" />
                       </figure>
 
                       <div className="meta-wrapper">
                         <Button type='link' href={`/details/${item._id}`} className='stretched-link d-block text-white'>
-                          <h5>{item.name}</h5>
+                          <h5>{item.title}</h5>
                         </Button>
 
                         <span>

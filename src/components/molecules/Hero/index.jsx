@@ -57,7 +57,7 @@ export default function Hero(props) {
                   </div>
                 </div>
 
-                <div className='box-data mx-5'>
+                <div className='box-data'>
                   <div className='text-left'>
                     <img src={iconCity} alt="icon" />
                     <p className='text-primary mt-2'>

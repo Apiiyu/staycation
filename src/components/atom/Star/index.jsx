@@ -12,7 +12,7 @@ export default function Star (props) {
     leftPos += width
     
     stars.push(
-      <div className="star" key={index} style={{ left: index * width, height: height, width: width, marginRight: spacing }}></div>
+      <div className="star" key={`star-${index}`} style={{ left: index * width, height: height, width: width, marginRight: spacing }}></div>
     )
   }
 

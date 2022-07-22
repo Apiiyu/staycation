@@ -5,22 +5,30 @@ import ItemDetails from 'json/itemDetails'
 import FeaturedImages from 'components/molecules/FeaturedImages';
 import Description from 'components/molecules/Description';
 import BookingForm from 'components/molecules/BookingForm';
-import Categories from 'components/molecules/Categories';
+import Activities from 'components/molecules/Activities';
 import Testimonials from 'components/organisms/Testimonials';
 import Footer from 'components/organisms/Footer';
-
-export default class Details extends Component {
+import { connect } from 'react-redux'
+import { checkoutBooking } from 'store/actions/checkout';
+import { fetchDetailPage } from 'store/actions/detail';
+class Details extends Component {
   componentDidMount() {
-    window.title = 'Staycation | Details'
+    document.title = 'Staycation | Details'
     window.scrollTo(0, 0)
-  }
 
+    let id = this.props.match.params.id
+    this.props.fetchDetailPage(`${process.env.REACT_APP_HOST}/api/v1/detail/${id}`, 'detailPage')
+  }
+  
   constructor(props) {
     super(props)
     this.refMostPicked = React.createRef()
   }
 
   render () {
+    console.log(this.props, 'props detail')
+    const data = this.props.detail?.detailPage
+
     const breadcrumb = [
       {
         pageTitle: 'Home',
@@ -35,24 +43,29 @@ export default class Details extends Component {
     return (
       <>
         <Header {...this.props} />
-        <HeaderDetails breadcrumb={breadcrumb} data={ItemDetails} />
-        <FeaturedImages data={ItemDetails.imageUrls} />
+        <HeaderDetails breadcrumb={breadcrumb} data={data} />
+        <FeaturedImages data={data.images} />
         <section className="container">
           <div className="row">
             <div className="col-7 pr-5">
-              <Description data={ItemDetails} />
+              <Description data={data} />
             </div>
 
             <div className="col-5">
-              <BookingForm itemDetails={ItemDetails} />
+              <BookingForm itemDetails={data} startBooking = {this.props.checkoutBooking} />
             </div>
           </div>
         </section>
-
-        <Categories data={ItemDetails.categories}></Categories>
-        <Testimonials data={ItemDetails.testimonial}></Testimonials>
+        <Activities data={data.activities} />
+        <Testimonials data={data.testimonial}/>
         <Footer />
       </>
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  detail: state.detail
+})
+
+export default connect(mapStateToProps, { fetchDetailPage, checkoutBooking })(Details)
