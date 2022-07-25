@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import Home from "pages/Home";
 import Details from "pages/Details";
 import Checkout from "pages/Checkout";
+import NotFound from "pages/404"
 import "assets/scss/style.scss";
 
 const history = createBrowserHistory({
@@ -18,10 +19,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/details/:id" component={Details} />
-          <Route exact path="/checkout" component={Checkout} />
-          {/* <Route path="/checkout" component={Checkout} />
-          <Route path="/example" component={Example} />
-          <Route path="*" component={NotFound} /> */}
+          <Route path="/checkout" component={Checkout} />
+          <Route path="*" component={NotFound} />
         </Switch>
       </Router>
 
