@@ -4,21 +4,20 @@ import { InputText } from 'components/atom/Form'
 
 export default function BookingInformation(props) {
   const { data, ItemDetails, checkout} = props
-  console.log('checkout', checkout)
 
   return (
     <Fade>
       <div className="container mb-5">
         <div className="row justify-content-center align-items-center">
-          <div className="col-5 border-2 border-end border-light py-5" style={{ paddingRight: 80 }}>
+          <div className="col-12 col-lg-5 border-2 border-end border-light py-5 card-booking-information">
             <Fade delay={300}>
               <div className="card border-0">
                 <figure className="img-wrapper" style={{ height: 270 }}>
-                  <img src={ItemDetails.imageUrl} alt={ItemDetails.name} className="img-cover" />
+                  <img src={`${process.env.REACT_APP_HOST_ASSETS}/items/${ItemDetails.images[0].imageUrl}`} alt={ItemDetails._id} className="img-cover" />
                 </figure>
 
                 <div className="row align-items-center">
-                  <div className="col">
+                  <div className="col-12 col-lg">
                     <div className="meta-wrapper">
                       <h5>{ItemDetails.title}</h5>
                       <span className="text-muted">
@@ -27,20 +26,20 @@ export default function BookingInformation(props) {
                     </div>
                   </div>
 
-                  {/* <div className="col-auto">
+                  <div className="col-12 col-lg-auto">
                     <span className='text-primary'>
-                      ${checkout.duration + ItemDetails.price} USD
+                      ${checkout.duration * ItemDetails.price} USD
                       <span className="text-muted"> per </span>
                       ${checkout.duration} {ItemDetails.unit}
                       {+checkout.duration > 1 ? 's' : ''}
                     </span>
-                  </div> */}
+                  </div>
                 </div>
               </div>
             </Fade>
           </div>
 
-          <div className="col-5 py-5" style={{ paddingLeft: 80 }}>
+          <div className="col-12 col-lg-5 py-lg-5 card-form">
             <Fade delay={600}>
               <label htmlFor="firstName">First Name</label>
               <InputText id="firstName" name='firstName' value={data.firstName} onChange={props.onChange} />

@@ -21,7 +21,7 @@ export default function Hero(props) {
       <section id='hero'>
         <div className='container'>
           <div className='row'>
-            <div className='col-md-6'>
+            <div className='col-12 col-md-6'>
               <div className="trigger-text">
                 <h1 className='heading text-gray-900 font-weight-bold'>
                   Forget Busy Work,
@@ -69,9 +69,9 @@ export default function Hero(props) {
               </div>
             </div>
       
-            <div className='col-md-6'>
+            <div className='d-none d-sm-block col-md-6'>
               <div className='box-img position-relative left-0'>
-                <img src={imgHero} alt="banner" />
+                <img src={imgHero} className="w-100" alt="banner" />
               </div>
             </div>
           </div>

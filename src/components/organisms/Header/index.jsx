@@ -2,14 +2,17 @@ import React from 'react'
 import Button from 'components/atom/Button'
 import BrandIcon from 'components/atom/BrandIcon'
 import { Fade } from 'react-reveal'
-
+import { useLocation } from 'react-router-dom'
 
 export default function Header(props) {
+  const { isCentered } = props
+  const location = useLocation()
+  
   const getNavLinkClass = (path) => {
-    return props.location.pathname === path ? 'active' : ''
+    return location.pathname === path ? 'active' : ''
   }
 
-  if(props.isCentered)
+  if(isCentered)
     return (
       <Fade>
         <header className="spacing-sm">

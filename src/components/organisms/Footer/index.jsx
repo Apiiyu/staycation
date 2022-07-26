@@ -14,10 +14,10 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="col-2 me-5">
+          <div className="col-12 col-lg-2 mt-3 mt-md-0 me-lg-5">
             <h6 className="mt-2 fw-medium text-primary">For Beginners</h6>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">
+              <li className="list-group-item mt-lg-3">
                 <Button type='link' href='/register' className='text-muted'>New Account</Button>
               </li>
 
@@ -31,10 +31,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="col-2 me-5">
+          <div className="col-12 col-lg-2 mt-4 mt-md-0 me-lg-5">
             <h6 className="mt-2 fw-medium text-primary">Explore Us</h6>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">
+              <li className="list-group-item mt-lg-3">
                 <Button type='link' href='/register' className='text-muted'>Our Careers</Button>
               </li>
 
@@ -48,10 +48,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="col-4">
+          <div className="col-12 col-lg-4 mt-4 mt-md-0 me-lg-5">
             <h6 className="mt-2 fw-medium text-primary">Connect Us</h6>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">
+              <li className="list-group-item mt-lg-3">
                 <Button isExternal type='link' href='mailto:khoirulloh.rafi2@gmail.com' className='text-muted'>khoirulloh.rafi2@gmail.com</Button>
               </li>
 

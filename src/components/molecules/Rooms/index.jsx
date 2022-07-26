@@ -9,7 +9,7 @@ import { Fade } from 'react-reveal'
 export default function Rooms() {
   return (
     <Fade bottom>
-      <section id='rooms' className='mt-5'>
+      <section id='rooms' className='mt-5 d-none d-lg-block'>
         <div className='container'>
           <h3 className='title text-gray-900 font-weight-bold lh-base'>
             Browse The Room <br/>

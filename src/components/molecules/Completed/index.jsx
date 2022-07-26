@@ -7,7 +7,7 @@ export default function Completed() {
     <Fade>
       <div className="container mb-5">
         <div className="row justify-content-center text-center">
-          <div className="col-4">
+          <div className="col-12 col-lg-4">
             <img src={CompletedIllustration} alt="illustration" className="img-fluid" />
 
             <p className="text-muted">

@@ -1,14 +1,15 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Fade } from 'react-reveal'
 
-export default function FeaturedImages(props) {
-  const { data } = props
-  console.log({data})
+export default function FeaturedImages() {
+  const data = useSelector((state) => state.detail.detailPage)
+  const images = data?.images || []
 
   return (
     <section className="container">
       <div className="container-grid sm">
-        {data.map((item, index) => {
+        {images.map((item, index) => {
           return (
             <div 
               key={`featured-images-${index}`} 

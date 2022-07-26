@@ -15,7 +15,7 @@ export default function Payment(props) {
     <Fade>
       <div className="container mb-5">
         <div className="row justify-content-center align-items-center">
-          <div className="col-5 border-2 border-end border-light py-5" style={{ paddingRight: 80 }}>
+          <div className="col-12 col-lg-5 py-lg-5 pb-5 box-payment">
             <Fade delay={300}>
               <p className="mb-4">Payment Information</p>
               <p>Tax: {tax}</p>
@@ -52,7 +52,7 @@ export default function Payment(props) {
             </Fade>
           </div>
 
-          <div className="col-5" style={{ paddingLeft: 80 }}>
+          <div className="col-12 col-lg-5 mt-5 mt-lg-0 card-payment">
             <Fade delay={600}>
               <label htmlFor="proofPayment">Upload Proof of Payment</label>
               <InputFile accept='image/*' id="proofPayment" name='proofPayment' value={data.proofPayment} onChange={props.onChange} />

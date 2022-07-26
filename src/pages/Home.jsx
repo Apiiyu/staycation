@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Header from 'components/organisms/Header'
 import Hero from 'components/molecules/Hero'
-
-import landingPage from 'json/landingPage.json'
 import Rooms from 'components/molecules/Rooms'
 import MostPicked from 'components/molecules/MostPicked'
 import Categories from 'components/molecules/Categories'
@@ -21,15 +19,12 @@ class Home extends Component {
     document.title = 'Staycation | Home'
     window.scrollTo(0, 0)
 
-    this.props.fetchHomePage("https://staycation-id.herokuapp.com/api/v1/landing-page", 'landingPage')
+    this.props.fetchHomePage("/landing-page", 'landingPage')
   }
 
 
   render() {
     const data = this.props.home?.landingPage
-    console.log(this.props, 'props')
-
-    // if (!data.hasOwnProperty('landingPage')) return null
 
     return (
       <>

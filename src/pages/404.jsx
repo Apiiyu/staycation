@@ -1,9 +1,6 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
 import Button from "components/atom/Button";
 
-function NotFound(props) {
-  console.log(props, 'props')
+function NotFound() {
 
   return (
     <div className="container">
@@ -21,7 +18,7 @@ function NotFound(props) {
             <Button
               className="btn mt-5"
               type="button"
-              onClick={() => props.history.back()}
+              onClick={() => window.history.back()}
               isLight
             >
               Yes, bring me to safe place please
@@ -33,4 +30,4 @@ function NotFound(props) {
   );
 }
 
-export default withRouter(NotFound);
+export default NotFound;

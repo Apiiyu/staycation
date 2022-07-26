@@ -54,6 +54,91 @@
 @import "utilities/api";
 // scss-docs-end import-stack
 
+@include media-breakpoint-down(sm) {
+  .container-grid {
+    .item.column-4,
+    .item.column-7 {
+      grid-column-end: span 12;
+    }
+
+    .item.column-3,
+    .item.column-5 {
+      grid-column: span 6;
+    }
+  }
+
+  .testimonial-hero, .testimonial-hero img {
+    width: 100%;
+    height: 500px;
+  }
+
+  section {
+   margin-bottom: 30px;
+  }
+
+  .icon-features {
+    width: 32px;
+    height: 32px;
+  }
+
+  .card-booking {
+    margin: 3rem 0;
+    padding: 30px 40px
+  }
+
+  .card-booking-information,
+  .card-bank {
+    padding-right: 0px;
+  }
+
+  .box-payment {
+    border-bottom: 2px solid $gray-400;
+  }
+
+  .card-form, .card-payment {
+    padding-left: 16px;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  #hero .box-img {
+    width: 550px;
+    height: 600px;
+  }
+
+  .testimonial-hero, .testimonial-hero img {
+    width: 365px;
+    height: 500px;
+  }
+
+  section {
+    margin-bottom: 100px;
+  }
+
+  .icon-features {
+    width: 38px;
+    height: 38px;
+  }
+
+  .card-booking {
+    padding: 60px 80px
+  }
+
+  .card-booking-information,
+  .card-bank {
+    padding-right: 80px;
+  }
+
+  .box-payment {
+    border-right: 2px solid $gray-400;
+  }
+
+  .card-form, .card-payment {
+    padding-left: 80px;
+  }
+}
+
+
 .brand-text-icon {
   font-size: 26px;
   font-weight: 600;
@@ -178,10 +263,6 @@ header {
   }
 }
 
-section {
-  margin-bottom: 100px;
-}
-
 .img-cover,
 .img-contain {
   object-fit: cover;
@@ -294,11 +375,6 @@ section {
 }
 
 .testimonial {
-  .testimonial-hero, .testimonial-hero img {
-    width: 365px;
-    height: 500px;
-  
-  }
   h5 {
     max-width: 600px;
   }
@@ -314,10 +390,6 @@ footer {
 
     a:hover {
       color: $gray-900;
-    }
-
-    &:first-child {
-      margin-top: 1rem;
     }
   }
 

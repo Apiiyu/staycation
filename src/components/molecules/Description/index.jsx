@@ -13,7 +13,7 @@ export default function Description(props) {
         {data.features.map((feature, index) => {
           return (
             <div key={`feature-${index}`} className="col-3 mt-5">
-              <img src={`${process.env.REACT_APP_HOST_ASSETS}/features/${feature.imageUrl}`} alt={feature.name} className="d-block mb-2" width={38} />
+              <img src={`${process.env.REACT_APP_HOST_ASSETS}/features/${feature.imageUrl}`} alt={feature.name} className="d-block mb-2 icon-features" />
               <span>{feature.qty}</span>
               <span className="text-muted fw-light ms-1 capitalize text-capitalize">{feature.name}</span>
             </div>
